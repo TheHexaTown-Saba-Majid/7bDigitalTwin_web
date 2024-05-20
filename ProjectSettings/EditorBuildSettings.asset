@@ -5,24 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/AR Foundation.unity
-    guid: f82478e338e79469c8ea7441c17930ab
-  - enabled: 0
-    path: Assets/Scenes/HexaAR.unity
-    guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 0
-    path: Assets/Scenes/CategorySelection.unity
-    guid: 2658b51343609a248905f2b679e61f8f
-  - enabled: 0
-    path: Assets/Scenes/AR_Furniture.unity
-    guid: 20ef8b7d7507c2144afc9c5f19934526
-  - enabled: 0
-    path: Assets/Scenes/ModelViewer.unity
-    guid: d404e5612b20bd4468deaf69e324702a
   - enabled: 1
     path: Assets/Scenes/HexaFirstPersonMovement.unity
     guid: 6c717a059c18d5d498b3a1c4f1cc0ce5
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: b05607230a6e79b4eb7e9b0847e03023
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
