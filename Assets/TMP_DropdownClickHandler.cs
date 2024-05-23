@@ -39,8 +39,16 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
         }
         for (int i = 0; i < FirstFloor.Length; i++)
         {
-            FirstFloor[i].gameObject.SetActive(false);
+            if(i==0)
+            {
+                FirstFloor[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                FirstFloor[i].gameObject.SetActive(false);
+            }
         }
+           
         isDropdownOpen = !isDropdownOpen;
         if (isDropdownOpen)
         {
