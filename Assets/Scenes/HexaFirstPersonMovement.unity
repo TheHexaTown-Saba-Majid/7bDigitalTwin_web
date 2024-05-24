@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.007
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
-  m_AmbientEquatorColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientGroundColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.8396226, g: 0.82251334, b: 0.73268956, a: 1}
+  m_AmbientGroundColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_AmbientIntensity: 1.94
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -1997,6 +1997,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809967542652479644, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.61
       objectReference: {fileID: 0}
     - target: {fileID: 4820155638126289526, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
         type: 3}
