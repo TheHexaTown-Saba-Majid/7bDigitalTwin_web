@@ -1,24 +1,3 @@
-/*using UnityEngine;
-using TMPro;
-using UnityEngine.EventSystems;
-public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
-{
-    public Animator animator; // Reference to the Animator component
-    void Start()
-    {
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
-    }
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Trigger the animation when the dropdown is clicked
-        animator.Play("testing");
-    }
-}
-
-*/
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -27,6 +6,10 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     public TMP_Dropdown tmpDropdown; // Reference to the TMP_Dropdown component
     public Animator animator; // Reference to the Animator component
     private bool isDropdownOpen = false;
+    public GameObject[] FirstFloor; // Array of GameObjects to be turned off when dropdown is clicked
+    public Camera[] cameras; // Array to hold references to all cameras
+    public Camera additionalCamera; // Reference to an additional camera that may need to be turned off
+    private int check = 0; // Flag to ensure a specific line runs only once
     void Start()
     {
         if (animator == null)
@@ -37,10 +20,35 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
         {
             tmpDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
         }
+        // Initially, deactivate all cameras except the first one
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].gameObject.SetActive(false);
+        }
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Toggle the state of the dropdown
+        // This block ensures that the code within runs only once
+        if (check == 0)
+        {
+            if (cameras.Length > 0)
+            {
+                cameras[0].gameObject.SetActive(true);
+            }
+            check = 1; // Set check to 1 to prevent this block from running again
+        }
+        for (int i = 0; i < FirstFloor.Length; i++)
+        {
+            if(i==0)
+            {
+                FirstFloor[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                FirstFloor[i].gameObject.SetActive(false);
+            }
+        }
+           
         isDropdownOpen = !isDropdownOpen;
         if (isDropdownOpen)
         {
@@ -53,7 +61,6 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     }
     void Update()
     {
-        // Check if the dropdown has closed without selecting a value
         if (isDropdownOpen && !tmpDropdown.IsExpanded)
         {
             isDropdownOpen = false;
@@ -62,15 +69,27 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     }
     void OnDropdownValueChanged(int value)
     {
-        // This method will be called whenever a dropdown value is changed
         Debug.Log("Selected option: " + tmpDropdown.options[value].text);
-        // Ensure the dropdown closes when a value is selected
+        // Deactivate all cameras
+        foreach (var camera in cameras)
+        {
+            camera.gameObject.SetActive(false);
+        }
+        // Deactivate the additional camera if it is on
+        if (additionalCamera != null)
+        {
+            additionalCamera.gameObject.SetActive(false);
+        }
+        // Activate the selected camera
+        if (value >= 0 && value < cameras.Length)
+        {
+            cameras[value].gameObject.SetActive(true);
+        }
         isDropdownOpen = false;
         animator.Play("reverse");
     }
     void OnDestroy()
     {
-        // Remove listener to avoid memory leaks
         if (tmpDropdown != null)
         {
             tmpDropdown.onValueChanged.RemoveListener(OnDropdownValueChanged);
