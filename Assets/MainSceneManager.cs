@@ -4,14 +4,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
-{   
+{
     public Animator animator;
+    public Animator LeftPanelAnimator;
     public string animationStateName;
     private Coroutine currentCoroutine;
     public Camera[] cameras;
+    string Check;
 
     void Start()
     {
+        Check = "Positioned";
+
         if (animator != null)
         {
             animator.enabled = false;
@@ -29,7 +33,7 @@ public class MainSceneManager : MonoBehaviour
             }
             currentCoroutine = StartCoroutine(EnableAnimatorTemporarily());
         }
-        
+
     }
     private IEnumerator EnableAnimatorTemporarily()
     {
@@ -46,7 +50,7 @@ public class MainSceneManager : MonoBehaviour
     }
     public void BirdView()
     {
-        for (int i = 0; i < cameras.Length- 1; i++) {
+        for (int i = 0; i < cameras.Length - 1; i++) {
 
             cameras[i].gameObject.SetActive(false);
         }
@@ -64,5 +68,19 @@ public class MainSceneManager : MonoBehaviour
     public void help()
     {
         Application.OpenURL("https://www.thehexatown.com/");
+    }
+    public void LeftPanelBtn()
+    {
+        if(Check == "Positioned")
+        {
+            LeftPanelAnimator.Play("LeftPanelAnim");
+            Check = "UnPositioned";
+            return;
+        }
+        if (Check == "UnPositioned")
+        {
+            LeftPanelAnimator.Play("LeftPanelClosingAnim");
+            Check = "Positioned";
+        }
     }
 }
