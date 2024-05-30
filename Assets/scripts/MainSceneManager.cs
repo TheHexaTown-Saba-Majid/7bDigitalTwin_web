@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class MainSceneManager : MonoBehaviour
     private Coroutine currentCoroutine;
     public Camera[] cameras;
     string Check;
+
 
     void Start()
     {
@@ -83,4 +86,5 @@ public class MainSceneManager : MonoBehaviour
             Check = "Positioned";
         }
     }
+    
 }

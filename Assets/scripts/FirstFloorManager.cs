@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.Rendering.DebugUI;
 
 public class FirstFloorManager : MonoBehaviour, IPointerClickHandler
 {
@@ -10,11 +11,14 @@ public class FirstFloorManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] groundFloor; 
     public Camera[] cameras; 
     public Camera additionalCamera;
+    TextMeshProUGUI txt;
 
     private int check = 0; // Flag to ensure a specific line runs only once
 
     void Start()
     {
+        txt = GameObject.FindGameObjectWithTag("ViewTag").GetComponent<TextMeshProUGUI>();
+
         if (tmpDropdown != null)
         {
             tmpDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
@@ -30,6 +34,7 @@ public class FirstFloorManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        txt.text = gameObject.name;
         // Deactivate all ground floor objects
         for (int i = 0; i < groundFloor.Length; i++)
         {
@@ -62,6 +67,7 @@ public class FirstFloorManager : MonoBehaviour, IPointerClickHandler
     void OnDropdownValueChanged(int value)
     {
         Debug.Log("Selected option: " + tmpDropdown.options[value].text);
+        txt.text = tmpDropdown.options[value].text;
 
         // Deactivate all cameras
         DeactivateAllCameras();

@@ -3239,9 +3239,10 @@ GameObject:
   - component: {fileID: 938573322}
   - component: {fileID: 938573321}
   - component: {fileID: 938573320}
+  - component: {fileID: 938573324}
   - component: {fileID: 938573323}
   m_Layer: 5
-  m_Name: GroundFloor_Dropdown
+  m_Name: Ground Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3395,6 +3396,18 @@ MonoBehaviour:
   - {fileID: 1503751066}
   - {fileID: 5264112}
   additionalCamera: {fileID: 417016594}
+--- !u!114 &938573324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938573318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3271ae76bda7fc44c851d5d39dd3350b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &970844354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,7 +3762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7743335}
   m_AnchorMax: {x: 1, y: 0.7743335}
-  m_AnchoredPosition: {x: 0.000015258789, y: 19.9}
+  m_AnchoredPosition: {x: 0.000015258789, y: 19.900024}
   m_SizeDelta: {x: 0.00012207, y: 34.5691}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &996279898
@@ -3881,7 +3894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -15.5976, y: -0.0000016689}
+  m_AnchoredPosition: {x: -5, y: -0.0000016689}
   m_SizeDelta: {x: 64.4024, y: 69.9752}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1027141360
@@ -5875,6 +5888,7 @@ GameObject:
   - component: {fileID: 1424593773}
   - component: {fileID: 1424593775}
   - component: {fileID: 1424593774}
+  - component: {fileID: 1424593776}
   m_Layer: 5
   m_Name: 'Item '
   m_TagString: Untagged
@@ -5998,6 +6012,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424593772}
   m_CullTransparentMesh: 1
+--- !u!114 &1424593776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424593772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3271ae76bda7fc44c851d5d39dd3350b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470623481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,7 +8473,7 @@ GameObject:
   - component: {fileID: 2107796373}
   m_Layer: 5
   m_Name: currentFloor_txt
-  m_TagString: Untagged
+  m_TagString: ViewTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8491,7 +8517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: First Floor
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbc5ec40d3559644184d1cee074435be, type: 2}
   m_sharedMaterial: {fileID: 6370095229995147960, guid: bbc5ec40d3559644184d1cee074435be,
@@ -8584,7 +8610,7 @@ GameObject:
   - component: {fileID: 2115331876}
   - component: {fileID: 2115331877}
   m_Layer: 5
-  m_Name: FirstFloor_Dropdown
+  m_Name: First Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

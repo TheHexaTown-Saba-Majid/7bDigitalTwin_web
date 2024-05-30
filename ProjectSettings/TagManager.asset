@@ -8,6 +8,7 @@ TagManager:
   - Door
   - Rooms
   - indicator
+  - ViewTag
   layers:
   - Default
   - TransparentFX
