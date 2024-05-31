@@ -1141,6 +1141,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1736982517}
+        m_TargetAssemblyTypeName: SelectedButtonFunctionality, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &317191787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,6 +3699,18 @@ MonoBehaviour:
           m_StringArgument: HexaFirstPersonMovement
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1736982517}
+        m_TargetAssemblyTypeName: SelectedButtonFunctionality, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &989019135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4347,6 +4371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1736982517}
+        m_TargetAssemblyTypeName: SelectedButtonFunctionality, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1133291080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,6 +4855,18 @@ MonoBehaviour:
       - m_Target: {fileID: 970844356}
         m_TargetAssemblyTypeName: MainSceneManager, Assembly-CSharp
         m_MethodName: BirdView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1736982517}
+        m_TargetAssemblyTypeName: SelectedButtonFunctionality, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6916,7 +6964,7 @@ Transform:
   m_GameObject: {fileID: 1736982515}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -638.8036, y: -511.008, z: -1.7672548}
+  m_LocalPosition: {x: -631, y: -511.008, z: -1.767255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6938,16 +6986,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678b8dccd970d844e9dd16f0d7b70115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentGameObjects:
-  - {fileID: 1133291077}
-  - {fileID: 989019132}
-  - {fileID: 1230542163}
-  - {fileID: 317191784}
-  childGameObjects:
-  - {fileID: 216639658}
-  - {fileID: 485402245}
-  - {fileID: 595429782}
-  - {fileID: 1269021265}
+  buttons:
+  - {fileID: 1133291079}
+  - {fileID: 989019134}
+  - {fileID: 1230542165}
+  - {fileID: 317191786}
 --- !u!1 &1746086276
 GameObject:
   m_ObjectHideFlags: 0
