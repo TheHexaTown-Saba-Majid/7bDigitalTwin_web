@@ -21,7 +21,7 @@ public class MainSceneManager : MonoBehaviour
 
         if (animator != null)
         {
-            animator.enabled = false;
+          //  animator.enabled = false;
         }
     }
     public void ControlAnimator()
