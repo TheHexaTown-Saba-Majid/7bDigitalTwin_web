@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HexaFirstPersonMovement.unity
     guid: 6c717a059c18d5d498b3a1c4f1cc0ce5
+  - enabled: 1
+    path: Assets/Scenes/ModelViewer.unity
+    guid: a24e9f6be2936e84f9f6fcb3a66a3e23
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
