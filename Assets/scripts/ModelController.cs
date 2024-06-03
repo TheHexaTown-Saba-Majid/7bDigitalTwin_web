@@ -6,12 +6,8 @@ using UnityEngine;
 
 public class ModelController : MonoBehaviour
 {
-    public string tagToTurnOff = "Rooms";
-    private GameObject clickedObjectParent;
-    public GameObject backbttn;
     private void OnMouseDown()
     {
-        /*
          // Get the grandparent GameObject
         GameObject grandparentObject = transform.parent?.parent?.gameObject;
         GameObject parent =  transform.parent?.gameObject;
@@ -46,23 +42,5 @@ public class ModelController : MonoBehaviour
 
         parent.GetComponent<LeanPinchScale>().enabled = true;
         parent.GetComponent<LeanTwistRotateAxis>().enabled = true;
-
-        */
-
-
-        gameObject.SetActive(false);
-
-        backbttn.SetActive(true);
-
-        clickedObjectParent = transform.parent.gameObject;
-
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tagToTurnOff);
-        foreach (GameObject obj in objectsWithTag)
-        {
-            if (obj != clickedObjectParent)
-            {
-                obj.SetActive(false);
-            }
-        }
     }
 }
