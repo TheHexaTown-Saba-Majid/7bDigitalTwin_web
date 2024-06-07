@@ -18,7 +18,7 @@ public class MainSceneManager : MonoBehaviour
     void Start()
     {
         Check = "Positioned";
-
+        LeftPanelAnimator.Play("LeftPanelAnim");
         if (animator != null)
         {
           //  animator.enabled = false;
@@ -86,5 +86,14 @@ public class MainSceneManager : MonoBehaviour
             Check = "Positioned";
         }
     }
+    public void closePanel()
+    {
+        LeftPanelAnimator.Play("LeftPanelAnim");
+    }
     
+    public void openPanel()
+    {
+        LeftPanelAnimator.Play("LeftPanelClosingAnim");
+    }
+
 }

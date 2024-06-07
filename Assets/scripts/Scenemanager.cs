@@ -7,6 +7,8 @@ public class Scenemanager : MonoBehaviour
 {
     public void Load(string scenename)
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(scenename);
     }
+ 
 }

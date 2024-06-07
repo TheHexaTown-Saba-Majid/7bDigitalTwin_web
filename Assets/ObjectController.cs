@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    public Transform target; // The 3D object to rotate
+    public Transform target;
     public float rotationSpeed = 100f;
     public float zoomSpeed = 10f;
-    public Camera cam; // The camera to zoom
-    public float minZoomDistance = 2f; // Minimum zoom distance
-    public float maxZoomDistance = 20f; // Maximum zoom distance
+    public Camera cam;
+    public float minZoomDistance = 2f; 
+    public float maxZoomDistance = 20f; 
     private Vector3 lastMousePosition;
     private float currentZoomDistance;
     void Start()
     {
-        // Initialize current zoom distance
         currentZoomDistance = Vector3.Distance(cam.transform.position, target.position);
     }
     void Update()
@@ -29,16 +28,20 @@ public class ObjectController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector3 delta = Input.mousePosition - lastMousePosition;
-            float rotationX = delta.y * rotationSpeed * Time.deltaTime;
-            float rotationY = -delta.x * rotationSpeed * Time.deltaTime;
-            // Check if we should rotate in the X or Y direction
+            float rotationX = -delta.y * rotationSpeed * Time.deltaTime;
+            float rotationY = delta.x * rotationSpeed * Time.deltaTime;
             if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
+              
                 target.Rotate(Vector3.up, rotationY, Space.World);
             }
             else
             {
-                target.Rotate(Vector3.right, rotationX, Space.World);
+               
+                float newRotationZ = target.localEulerAngles.z + rotationX;
+                if (newRotationZ > 180) newRotationZ -= 360; 
+                newRotationZ = Mathf.Clamp(newRotationZ, -30f, 30f);
+                target.localEulerAngles = new Vector3(target.localEulerAngles.x, target.localEulerAngles.y, newRotationZ);
             }
             lastMousePosition = Input.mousePosition;
         }
@@ -50,9 +53,7 @@ public class ObjectController : MonoBehaviour
         {
             float newZoomDistance = currentZoomDistance - scroll * zoomSpeed;
             newZoomDistance = Mathf.Clamp(newZoomDistance, minZoomDistance, maxZoomDistance);
-            // Calculate direction from target to camera
             Vector3 direction = (cam.transform.position - target.position).normalized;
-            // Update camera position
             cam.transform.position = target.position + direction * newZoomDistance;
             currentZoomDistance = newZoomDistance;
         }

@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 4896098655780065160, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 4896098655780065160, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
         type: 3}
@@ -658,39 +658,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5861475872949351245, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1167798637}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b98725cf8a8a244a2f3e1d52acc4ca, type: 3}
---- !u!1 &1167798636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5861475872949351245, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 1167798635}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1167798637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167798636}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5ecc0f92300a614aafea1e643a1c6fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  zoomSpeed: 10
-  minZoom: 5
-  maxZoom: 50
-  mainCamera: {fileID: 417016594}
-  cameraParent: {fileID: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  initialCameraDistance: 0
 --- !u!4 &1167798639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896098655780065160, guid: b8b98725cf8a8a244a2f3e1d52acc4ca,
@@ -754,7 +723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e1ffdc011d5130408956ddb6e5fb6ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b981a66eb7fbb74587fd3adc23222e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -828,6 +797,7 @@ GameObject:
   - component: {fileID: 1452425475}
   - component: {fileID: 1452425474}
   - component: {fileID: 1452425473}
+  - component: {fileID: 1452425476}
   m_Layer: 5
   m_Name: ResetBtn
   m_TagString: Untagged
@@ -898,16 +868,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353673645}
-        m_TargetAssemblyTypeName: Scenemanager, Assembly-CSharp
-        m_MethodName: Load
-        m_Mode: 5
+      - m_Target: {fileID: 1452425476}
+        m_TargetAssemblyTypeName: ResetHint, Assembly-CSharp
+        m_MethodName: ReloadSceneAndDisable
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ModelViewer
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1452425474
@@ -930,7 +900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0d2a54123016cb4caac64c0b2318ee4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1a066ff4ed1cd64a8d335cf43d0a9b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -948,6 +918,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452425471}
   m_CullTransparentMesh: 1
+--- !u!114 &1452425476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452425471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd66ecc6179710b4293da3e532c9c7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDisable: {fileID: 154388681}
 --- !u!1 &1595606797
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,13 +957,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595606797}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856578852}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 90, y: -90}
@@ -1062,7 +1045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0d2a54123016cb4caac64c0b2318ee4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa9a8083b5075f245ba6f03541d317f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1126,7 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1167798639}
   rotationSpeed: 10
-  zoomSpeed: 10
+  zoomSpeed: 100
   cam: {fileID: 417016594}
   minZoomDistance: 20
   maxZoomDistance: 100
@@ -1236,7 +1219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a5380268ca3d2246ab97a546dc10360, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e821c250be27dba439da7a178528edfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1477,7 +1460,7 @@ SceneRoots:
   - {fileID: 2064425185}
   - {fileID: 417016591}
   - {fileID: 1167798635}
-  - {fileID: 53589331}
   - {fileID: 1746086278}
   - {fileID: 856578852}
+  - {fileID: 53589331}
   - {fileID: 653662348}
