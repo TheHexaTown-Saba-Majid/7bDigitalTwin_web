@@ -12,11 +12,11 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     public Camera[] cameras;
     public Camera additionalCamera;
     private int check = 0;
-    TextMeshProUGUI txt;
+    public TextMeshProUGUI txt;
 
     void Start()
     {
-       txt = GameObject.FindGameObjectWithTag("ViewTag").GetComponent<TextMeshProUGUI>();
+   //    txt = GameObject.FindGameObjectWithTag("ViewTag").GetComponent<TextMeshProUGUI>();
         
         if (animator == null)
         {
@@ -33,7 +33,7 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        txt.text = gameObject.name;
+      txt.text = gameObject.name;
 
         if (check == 0)
         {
@@ -76,7 +76,7 @@ public class TMP_DropdownClickHandler : MonoBehaviour, IPointerClickHandler
     void OnDropdownValueChanged(int value)
     {
         Debug.Log("Selected option: " + tmpDropdown.options[value].text);
-       txt.text = tmpDropdown.options[value].text;
+        txt.text = tmpDropdown.options[value].text;
 
         foreach (var camera in cameras)
         {
