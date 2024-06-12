@@ -28,8 +28,8 @@ public class ObjectController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector3 delta = Input.mousePosition - lastMousePosition;
-            float rotationX = -delta.y * rotationSpeed * Time.deltaTime;
-            float rotationY = delta.x * rotationSpeed * Time.deltaTime;
+            float rotationX = delta.y * rotationSpeed * Time.deltaTime;
+            float rotationY = -delta.x * rotationSpeed * Time.deltaTime;
             if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
               
