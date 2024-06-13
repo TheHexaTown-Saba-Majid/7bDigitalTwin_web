@@ -11,13 +11,13 @@ public class FirstFloorManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] groundFloor; 
     public Camera[] cameras; 
     public Camera additionalCamera;
-    TextMeshProUGUI txt;
+   public  TextMeshProUGUI txt;
 
     private int check = 0; // Flag to ensure a specific line runs only once
 
     void Start()
     {
-        txt = GameObject.FindGameObjectWithTag("ViewTag").GetComponent<TextMeshProUGUI>();
+//        txt = GameObject.FindGameObjectWithTag("ViewTag").GetComponent<TextMeshProUGUI>();
 
         if (tmpDropdown != null)
         {
