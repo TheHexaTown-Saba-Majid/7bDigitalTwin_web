@@ -48,13 +48,14 @@ public class accordianDropDown : MonoBehaviour, IPointerClickHandler
     private void Update()
     {
         float targetScale = isOpen ? 1 : 0;
+
         Vector3 scale = container.localScale;
         scale.y = Mathf.Lerp(scale.y, targetScale, Time.deltaTime * 12);
         container.localScale = scale;
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        //CloseOtherDropdowns();
+        CloseOtherDropdowns();
         isOpen = !isOpen;
     }
     private void SetContainerScale(float scaleY)
@@ -71,8 +72,10 @@ public class accordianDropDown : MonoBehaviour, IPointerClickHandler
             if (dropdown != this)
             {
                 dropdown.isOpen = false;
+                
                 dropdown.SetContainerScale(0);
-               
+              //  animator.Play("reverse");
+
             }
         }
     }
