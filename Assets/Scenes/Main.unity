@@ -505,6 +505,7 @@ Transform:
   - {fileID: 1353673644}
   - {fileID: 970844355}
   - {fileID: 387743993}
+  - {fileID: 1554320122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102621663
@@ -582,37 +583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102621663}
   m_CullTransparentMesh: 1
---- !u!1 &123211451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 123211452}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &123211452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123211451}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.6, y: 31.2, z: 9.23779}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149102144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,37 +4100,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734272878}
   m_CullTransparentMesh: 1
---- !u!1 &762772207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 762772208}
-  m_Layer: 0
-  m_Name: GameObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &762772208
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762772207}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 31.2, z: 9.23779}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781392116
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,37 +5961,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &1038681937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1038681938}
-  m_Layer: 0
-  m_Name: GameObject (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1038681938
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038681937}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 31.2, z: 3.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049156208
 GameObject:
   m_ObjectHideFlags: 0
@@ -8950,7 +8858,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554320122}
-  - component: {fileID: 1554320121}
   - component: {fileID: 1554320123}
   m_Layer: 0
   m_Name: CameraController
@@ -8959,30 +8866,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1554320121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554320120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e425b7edb54bf2d46ba1a5eacba95cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 417016590}
-  firstFloorCamera: {fileID: 1883755701}
-  groundFloorCamera: {fileID: 577301744}
-  groundFloorTransforms:
-  - {fileID: 5264109}
-  - {fileID: 893245683}
-  - {fileID: 1503751063}
-  firstFloorTransforms:
-  - {fileID: 661316003}
-  - {fileID: 193317740}
-  - {fileID: 712078457}
-  buttonCount: 6
 --- !u!4 &1554320122
 Transform:
   m_ObjectHideFlags: 0
@@ -8991,12 +8874,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554320120}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 194.21896, y: 1009.22003, z: -2.1245022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4562.5356, y: 1491.7961, z: 38.16381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 53589331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1554320123
 MonoBehaviour:
@@ -9545,6 +9428,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1554320123}
         m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
         m_MethodName: FirstFloorManager
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1894955797}
+        m_TargetAssemblyTypeName: accordianDropDown, Assembly-CSharp
+        m_MethodName: DropDown1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10169,7 +10064,7 @@ GameObject:
   - component: {fileID: 1774962159}
   - component: {fileID: 1774962158}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: CameraAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12669,7 +12564,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1894955797}
         m_TargetAssemblyTypeName: accordianDropDown, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: DropDown1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13458,16 +13353,12 @@ SceneRoots:
   m_Roots:
   - {fileID: 2043238922}
   - {fileID: 2064425185}
+  - {fileID: 1774962161}
   - {fileID: 1071665353}
   - {fileID: 1815091209}
   - {fileID: 1290107808}
-  - {fileID: 653662348}
   - {fileID: 3925504919276524088}
   - {fileID: 53589331}
   - {fileID: 1746086278}
   - {fileID: 1315062225}
-  - {fileID: 1554320122}
-  - {fileID: 123211452}
-  - {fileID: 762772208}
-  - {fileID: 1038681938}
-  - {fileID: 1774962161}
+  - {fileID: 653662348}

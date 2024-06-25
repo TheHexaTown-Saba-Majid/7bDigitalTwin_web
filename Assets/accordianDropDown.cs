@@ -8,21 +8,24 @@ public class accordianDropDown : MonoBehaviour, IPointerClickHandler
     public Button dropdownButton;
     public Animator animator;
 
+    string state = "isClose";
 
     private bool isClicked = false;
-    public void OnButtonClick()
+    public void DropDown1()
     {
         if (!isClicked)
         {
             animator.Play("testing");
+            Debug.Log("Clicked");
         }
         else
         {
             animator.Play("reverse");
+            Debug.Log("unClicked");
         }
         isClicked = !isClicked;
     }
-
+   
 
     private void Start()
     {
@@ -72,10 +75,7 @@ public class accordianDropDown : MonoBehaviour, IPointerClickHandler
             if (dropdown != this)
             {
                 dropdown.isOpen = false;
-                
                 dropdown.SetContainerScale(0);
-              //  animator.Play("reverse");
-
             }
         }
     }
