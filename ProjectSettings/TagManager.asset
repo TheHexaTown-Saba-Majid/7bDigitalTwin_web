@@ -10,6 +10,10 @@ TagManager:
   - indicator
   - ViewTag
   - switch
+  - Dropdown1
+  - Dropdown2
+  - DROPDOWN1
+  - DROPDOWN2
   layers:
   - Default
   - TransparentFX
