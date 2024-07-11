@@ -17,7 +17,7 @@ public class MainSceneManager : MonoBehaviour
 
     void Start()
     {
-        Check = "Positioned";
+        Check = "UnPositioned";
         LeftPanelAnimator.Play("LeftPanelAnim");
         if (animator != null)
         {

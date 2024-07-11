@@ -17,8 +17,8 @@ public class MainSceneHandler : MonoBehaviour
         if (stateInfo.IsName(animationName) && stateInfo.normalizedTime >= 1f)
         {
             Destroy(startAnim); // Destroy the Animator component
-            return;
 
+            return;
         }
     }
 }
