@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 944860304}
-  m_IndirectSpecularColor: {r: 0.2712398, g: 0.30112213, b: 0.34161717, a: 1}
+  m_IndirectSpecularColor: {r: 0.26903334, g: 0.29929814, b: 0.33639202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -939,6 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b41a072cef2f41a682334e4cc260652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
 --- !u!1001 &913608080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3751,6 +3752,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPS_TheHexaTownBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 2503460730054474573, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503460730054474573, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0071
+      objectReference: {fileID: 0}
     - target: {fileID: 2644716567221618985, guid: edd52e0fd54b8a94aac377c0befdc3bb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3946,6 +3957,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 186ab59490a5421488f170951ec025fa, type: 2}
+    - target: {fileID: 8355819065883118390, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355819065883118390, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 29.157848
+      objectReference: {fileID: 0}
     - target: {fileID: 8416092453172802163, guid: edd52e0fd54b8a94aac377c0befdc3bb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3966,13 +3987,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.775
       objectReference: {fileID: 0}
+    - target: {fileID: 9097643418511395287, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097643418511395287, guid: edd52e0fd54b8a94aac377c0befdc3bb,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 34.578964
+      objectReference: {fileID: 0}
     - target: {fileID: 9183463619662930025, guid: edd52e0fd54b8a94aac377c0befdc3bb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 186ab59490a5421488f170951ec025fa, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1176361792623318457, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 7150026285063187657, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 4140306292731516074, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 3443421149385783417, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 8798365574333066616, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 1659163061429741749, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
+    - {fileID: 4069151822797127419, guid: edd52e0fd54b8a94aac377c0befdc3bb, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3895684367637507107, guid: edd52e0fd54b8a94aac377c0befdc3bb,
         type: 3}
