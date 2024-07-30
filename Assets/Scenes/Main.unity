@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317191784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2950,7 +2950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &417016591
 Transform:
   m_ObjectHideFlags: 0
@@ -3933,7 +3933,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577301744}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
@@ -10221,6 +10221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b41a072cef2f41a682334e4cc260652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
 --- !u!1 &1356991257
 GameObject:
   m_ObjectHideFlags: 0
@@ -12695,7 +12696,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1774962161}
   - component: {fileID: 1774962160}
-  - component: {fileID: 1774962159}
   - component: {fileID: 1774962158}
   m_Layer: 0
   m_Name: CameraAnim
@@ -12748,14 +12748,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1774962159
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774962157}
-  m_Enabled: 1
 --- !u!20 &1774962160
 Camera:
   m_ObjectHideFlags: 0
@@ -12763,7 +12755,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774962157}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
@@ -13105,7 +13097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1815817342
 Transform:
   m_ObjectHideFlags: 0
@@ -13514,7 +13506,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883755701}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
