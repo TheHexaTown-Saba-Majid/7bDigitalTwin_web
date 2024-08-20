@@ -21,13 +21,16 @@ public class SC_FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    // Reference to the VirtualJoystick script
+    public VirtualJoystick virtualJoystick;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
-       // Cursor.lockState = CursorLockMode.Locked;
-     //   Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 
     void Update()
@@ -35,12 +38,19 @@ public class SC_FPSController : MonoBehaviour
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        // Press Left Shift to run
+
+        // Keyboard movement
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+
+        // Joystick movement (added to the keyboard movement)
+        float joystickX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * virtualJoystick.Vertical() : 0;
+        float joystickY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * virtualJoystick.Horizontal() : 0;
+
+        // Combine keyboard and joystick input
         float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        moveDirection = (forward * (curSpeedX + joystickX)) + (right * (curSpeedY + joystickY));
 
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
@@ -51,9 +61,7 @@ public class SC_FPSController : MonoBehaviour
             moveDirection.y = movementDirectionY;
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
+        // Apply gravity
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
