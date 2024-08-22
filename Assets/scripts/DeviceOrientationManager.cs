@@ -1,17 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeviceOrientationManager : MonoBehaviour
 {
     public string tagToFind = "Joystick";
+    public GameObject RotationLogPanel;
+
+    private float initialScreenWidth;
+    private float initialScreenHeight;
 
     void Start()
     {
+        // Store the initial device resolution
+        initialScreenWidth = Screen.width;
+        initialScreenHeight = Screen.height;
+
+        // Print the initial device resolution
+        Debug.Log($"Initial Device Resolution: {initialScreenWidth}x{initialScreenHeight}");
+
+        // Detect the device and set the orientation accordingly
         DetectDeviceAndSetOrientation();
     }
 
-    void DetectDeviceAndSetOrientation()
+    public void DetectDeviceAndSetOrientation()
     {
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
@@ -20,6 +30,7 @@ public class DeviceOrientationManager : MonoBehaviour
         if (screenWidth >= 1920 && screenHeight >= 1080)
         {
             Debug.Log("Desktop detected. No orientation change required.");
+            RotationLogPanel.SetActive(false);
             DeactivateJoystick(); // Deactivate joystick for desktop
             return;
         }
@@ -28,14 +39,16 @@ public class DeviceOrientationManager : MonoBehaviour
         if ((screenWidth > 1024 && screenHeight > 768) || (screenWidth > 768 && screenHeight > 1024))
         {
             Debug.Log("iPad or large tablet detected");
-            Joystick();
+            RotationLogPanel.SetActive(true);
+            ActivateJoystick();
             ForceLandscape();
         }
         // Example criteria for mobile: Adjust as needed
         else if (screenWidth <= 768 || screenHeight <= 768)
         {
             Debug.Log("Mobile device detected");
-            Joystick();
+            RotationLogPanel.SetActive(true);
+            ActivateJoystick();
             ForceLandscape();
         }
         else
@@ -44,8 +57,26 @@ public class DeviceOrientationManager : MonoBehaviour
             DeactivateJoystick(); // Deactivate joystick if the device doesn't match any criteria
         }
     }
+    public void RecheckDeviceOrientation()
+    {
+        float currentScreenWidth = Screen.width;
+        float currentScreenHeight = Screen.height;
 
-    private void Joystick()
+
+        if (currentScreenWidth > currentScreenHeight)
+        {
+            Debug.Log("Orientation has changed. Activating joystick and disabling RotationLogPanel.");
+                          RotationLogPanel.SetActive(false);
+                          ActivateJoystick();
+        }
+        else
+        {
+            Debug.Log("Device orientation is the same as the initial dimensions. No changes made.");
+        }
+    }
+
+
+    private void ActivateJoystick()
     {
         GameObject obj = GameObject.FindGameObjectWithTag(tagToFind);
 
@@ -72,7 +103,6 @@ public class DeviceOrientationManager : MonoBehaviour
             Debug.Log($"No GameObject with tag '{tagToFind}' found to deactivate.");
         }
     }
-
     void ForceLandscape()
     {
         // Force the screen orientation to landscape
