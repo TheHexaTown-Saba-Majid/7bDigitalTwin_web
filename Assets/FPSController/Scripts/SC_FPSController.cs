@@ -24,16 +24,58 @@ public class SC_FPSController : MonoBehaviour
     // Reference to the VirtualJoystick script
     public VirtualJoystick virtualJoystick;
 
+    private float screenWidth;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        screenWidth = Screen.width;
 
-        // Lock cursor
+        // Lock cursor (optional)
         // Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;
     }
 
     void Update()
+    {
+        // Handle movement and camera control based on touch input
+        HandleMovementAndCamera();
+
+        // Apply gravity
+        if (!characterController.isGrounded)
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    void HandleMovementAndCamera()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.position.x < screenWidth / 2)
+            {
+                // Left half of the screen: handle player movement
+                HandleMovement();
+            }
+            else
+            {
+                // Right half of the screen: handle camera movement
+                HandleCamera(touch);
+            }
+        }
+        else
+        {
+            // Fallback to keyboard input for movement
+            HandleMovement();
+        }
+    }
+
+    void HandleMovement()
     {
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -60,23 +102,18 @@ public class SC_FPSController : MonoBehaviour
         {
             moveDirection.y = movementDirectionY;
         }
+    }
 
-        // Apply gravity
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-
-        // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        // Player and Camera rotation
+    void HandleCamera(Touch touch)
+    {
         if (canMove)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX += -touch.deltaPosition.y * lookSpeed * Time.deltaTime;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
+            float rotationY = touch.deltaPosition.x * lookSpeed * Time.deltaTime;
+            transform.rotation *= Quaternion.Euler(0, rotationY, 0);
         }
     }
 }

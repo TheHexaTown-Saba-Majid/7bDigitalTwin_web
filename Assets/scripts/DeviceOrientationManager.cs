@@ -54,7 +54,7 @@ public class DeviceOrientationManager : MonoBehaviour
         else
         {
             Debug.Log("Device not recognized as desktop, mobile, or tablet. Defaulting to landscape.");
-            DeactivateJoystick(); // Deactivate joystick if the device doesn't match any criteria
+            DeactivateJoystick(); 
         }
     }
     public void RecheckDeviceOrientation()
