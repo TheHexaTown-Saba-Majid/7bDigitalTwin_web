@@ -27,7 +27,7 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: b27ec7d82a91a48e69fd689ad6808e5e,
       type: 2}
-    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 1eb95d77acb39444e8cf44313496a874,
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: b49ec39d8f20678488544de996c4bc0f,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f1d9274b9b74a49488bb762cec258168,
       type: 2}
