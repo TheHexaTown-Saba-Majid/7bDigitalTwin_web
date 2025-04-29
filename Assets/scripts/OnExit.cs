@@ -11,8 +11,12 @@ public class OnExit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // Lock cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             ExitPnl.SetActive(true);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<SC_FPSController>().enabled = false;
+            GameObject.FindGameObjectWithTag("switch").GetComponent<SC_FPSController>().enabled = false;
         }
 
     }

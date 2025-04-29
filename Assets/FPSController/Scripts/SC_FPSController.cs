@@ -21,7 +21,11 @@ public class SC_FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    void Start()
+    void start()
+    {
+       
+    }
+    private void OnEnable()
     {
         characterController = GetComponent<CharacterController>();
 
@@ -29,7 +33,6 @@ public class SC_FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
     void Update()
     {
         // We are grounded, so recalculate move direction based on axes
